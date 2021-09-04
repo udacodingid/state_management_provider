@@ -1,3 +1,7 @@
+import 'dart:convert';
+
+import 'package:belajar_provider/provider/home_page_provider.dart';
+import 'package:belajar_provider/ui/homepage/home_page_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -23,6 +27,22 @@ class AuthProvider extends ChangeNotifier{
         "email": email.text,
         "password" : password.text
       },);
+
+    loadingLogin = false;
+    notifyListeners();
+
+    if(res.statusCode == 200){
+      Map data = jsonDecode(res.body);
+      if(data['token'] != null){
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
+          return HomeScreen();
+        }));
+      }
+    }else{
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Email atau password salah"))
+      );
+    }
   }
 
 
