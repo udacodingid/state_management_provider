@@ -4,15 +4,19 @@ import 'package:http/http.dart' as http;
 
 class HomePageProvider extends ChangeNotifier{
 
-  List<Map> users = [];
+  List users = [];
   bool loading = false;
+
+  HomePageProvider(context){
+    getListUser(context);
+  }
 
   //method logic
   Future<void> getListUser(BuildContext context) async{
     loading = true;
     notifyListeners();
 
-    http.Response res = await http.post(Uri.parse('https://reqres.in/api/users?page=2'));
+    http.Response res = await http.get(Uri.parse('https://reqres.in/api/users?page=2'));
 
     loading = false;
     notifyListeners();

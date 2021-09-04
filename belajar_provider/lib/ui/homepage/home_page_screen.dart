@@ -15,8 +15,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (BuildContext context) => HomePageProvider(),
-      
+      create: (BuildContext context) => HomePageProvider(context),
+      // create: (BuildContext context) => HomePageProvider(context),
+
       child: Scaffold(
         appBar: AppBar(
           title: Text('List Users'),
