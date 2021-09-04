@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 
 class HomePageProvider extends ChangeNotifier{
 
-  List<String> users = [];
+  List<Map> users = [];
   bool loading = false;
 
   //method logic

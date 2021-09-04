@@ -27,7 +27,15 @@ class _HomeScreenState extends State<HomeScreen> {
            return ListView.builder(
               itemCount: value.users.length,
               itemBuilder: (context, index){
-                return Text(value.users[index]);
+                // return Text(value.users[index]);
+                var itemUser = value.users[index];
+
+                return Card(
+                  child: ListTile(
+                    title: Text(itemUser['email']  ?? '_'),
+                    subtitle: Text(itemUser['first_name']  ?? '_'),
+                  ),
+                );
               },
             );
           },
