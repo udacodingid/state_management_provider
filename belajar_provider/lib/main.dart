@@ -1,4 +1,5 @@
 import 'package:belajar_provider/ui/homepage/home_page_screen.dart';
+import 'package:belajar_provider/ui/loginregister/login_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
+      home: LoginScreen(),
     );
   }
 }
