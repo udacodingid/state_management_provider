@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:belajar_provider/provider/home_page_provider.dart';
 import 'package:belajar_provider/ui/homepage/home_page_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -44,6 +43,4 @@ class AuthProvider extends ChangeNotifier{
       );
     }
   }
-
-
 }
