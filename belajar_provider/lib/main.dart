@@ -1,3 +1,4 @@
+import 'package:belajar_provider/ui/homepage/home_page_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -22,23 +23,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: PageHomePage(),
+      home: HomeScreen(),
     );
-  }
-}
-
-class PageHomePage extends StatefulWidget {
-
-  @override
-  _PageHomePageState createState() => _PageHomePageState();
-}
-
-class _PageHomePageState extends State<PageHomePage> {
-
-  //state management -- agar tidak bercampur antara ui dan logic nya
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }

@@ -23,13 +23,13 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         
         body: Consumer<HomePageProvider>(
-          builder: (BuildContext context,value, Widget? child){
+          builder: (BuildContext context,value, Widget child){
            return ListView.builder(
-              itemCount: users.lenght,
+              itemCount: value.users.length,
               itemBuilder: (context, index){
-                return Text(users{index});
+                return Text(value.users[index]);
               },
-            ),
+            );
           },
         )
       ),
